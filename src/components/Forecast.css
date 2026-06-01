@@ -1,0 +1,245 @@
+.forecast-container {
+  animation: fadeIn 0.5s ease 0.2s backwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.forecast-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.forecast-date {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.forecast-icon {
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.forecast-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.forecast-temps {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.temp-max,
+.temp-min {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.temp-max .label,
+.temp-min .label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.temp-max .value,
+.temp-min .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.temp-max .value {
+  color: #ff6b6b;
+}
+
+.temp-min .value {
+  color: #74c0fc;
+}
+
+.forecast-details {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.detail .icon {
+  font-size: 1.2rem;
+}
+
+.detail .info {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .forecast-card {
+    padding: 15px;
+  }
+
+  .forecast-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
+
+  .forecast-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .forecast-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .forecast-description {
+    font-size: 0.85rem;
+  }
+
+  .forecast-icon {
+    width: 45px;
+    height: 45px;
+    margin: 8px auto;
+  }
+
+  .forecast-temps {
+    margin: 10px 0;
+    padding: 8px 0;
+  }
+
+  .temp-max .value,
+  .temp-min .value {
+    font-size: 1.3rem;
+  }
+
+  .detail .icon {
+    font-size: 1rem;
+  }
+
+  .detail .info {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+  }
+
+  .forecast-card {
+    padding: 10px;
+  }
+
+  .forecast-date {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+
+  .forecast-icon {
+    width: 40px;
+    height: 40px;
+    margin: 5px auto;
+  }
+
+  .forecast-description {
+    font-size: 0.8rem;
+    margin: 8px 0;
+  }
+
+  .forecast-temps {
+    gap: 5px;
+    margin: 8px 0;
+    padding: 6px 0;
+  }
+
+  .temp-max .value,
+  .temp-min .value {
+    font-size: 1.1rem;
+  }
+
+  .forecast-details {
+    gap: 5px;
+  }
+
+  .detail .icon {
+    font-size: 0.9rem;
+  }
+
+  .detail .info {
+    font-size: 0.7rem;
+  }
+}
